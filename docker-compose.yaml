@@ -1,0 +1,17 @@
+version: '3'
+services:
+    mysql:
+        image: mysql:8.0.21
+        volumes:
+            - ./config/mysql/initdb.d:/docker-entrypoint-initdb.d
+        ports:
+            - "15432:5432"
+    java:
+        image: amazoncorretto:8u265
+        volumes:
+            - ./project:/project
+        ports:
+            - "18080:8080"
+        working_dir: "/project"
+        command: [ "sleep", "infinity" ]
+
