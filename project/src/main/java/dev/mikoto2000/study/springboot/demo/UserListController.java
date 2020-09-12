@@ -14,7 +14,7 @@ public class UserListController {
     @GetMapping("/users")
     public String users(Model model) {
 
-        Iterable<User> users = userRepository.findAll();
+        Iterable<User> users = userRepository.findAllByOrderByIdAsc();
 
         model.addAttribute("users", users);
 
