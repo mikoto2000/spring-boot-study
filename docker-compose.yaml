@@ -10,7 +10,7 @@ services:
         environment:
           - MYSQL_ROOT_PASSWORD=password
     java:
-        image: amazoncorretto:8u262-alpine
+        image: amazoncorretto:8u262
         volumes:
             - ./project:/project
             - gradle-volume:/root/.gradle
