@@ -1,10 +1,9 @@
 package dev.mikoto2000.study.springboot.demo;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.CrudRepository;
-
-public interface UserRepository extends CrudRepository<User, Long> {
-    List<User> findAll(Sort sort);
+public interface UserRepository extends PagingAndSortingRepository<User, Long> {
+    Page<User> findAll(Pageable pageable);
 }

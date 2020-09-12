@@ -1,8 +1,8 @@
 package dev.mikoto2000.study.springboot.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort.TypedSort;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,14 +14,12 @@ public class UserListController {
     private UserRepository userRepository;
 
     @GetMapping("/users")
-    public String users(Model model) {
+    public String users(Pageable pageable, Model model) {
 
-        TypedSort<User> user = Sort.sort(User.class);
-        Sort sort = user.by(User::getId).ascending();
+        Page<User> userPage = userRepository.findAll(pageable);
 
-        Iterable<User> users = userRepository.findAll(sort);
-
-        model.addAttribute("users", users);
+        model.addAttribute("page", userPage);
+        model.addAttribute("users", userPage.getContent());
 
         return "users";
     }

@@ -9,6 +9,11 @@
         <ul>
             <li th:each="user : ${users}">[[${user.getName()}]]</li>
         </ul>
+        <div>
+            <a th:if="${!page.first}" th:href="@{/users(page = ${page.number} - 1)}" >&lt;&lt;前</a>
+            [[${page.getNumber() + 1}]] / [[${page.getTotalPages()}]]
+            <a th:if="${!page.last}" th:href="@{/users(page = (${page.number} + 1))}" >次&gt;&gt;</a>
+        </div>
     </div>
 </body>
 </html>
