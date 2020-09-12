@@ -6,17 +6,18 @@ services:
         volumes:
             - ./config/mysql/initdb.d:/docker-entrypoint-initdb.d
         ports:
-            - "15432:5432"
+            - "3306:3306"
         environment:
           - MYSQL_ROOT_PASSWORD=password
     java:
-        image: amazoncorretto:8u265
+        image: amazoncorretto:8u262-alpine
         volumes:
             - ./project:/project
             - gradle-volume:/root/.gradle
             - m2-volume:/root/.m2
         ports:
             - "18080:8080"
+            - "35729:35729"
         working_dir: "/project"
         command: [ "sleep", "infinity" ]
         environment:
