@@ -1,7 +1,8 @@
 package dev.mikoto2000.study.springboot.demo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -15,14 +16,22 @@ public class UserListController {
     private UserRepository userRepository;
 
     @GetMapping("/users")
-    public String users(@PageableDefault(size = 25) Pageable pageable, Model model) {
+    public String users(UserForm userForm, @PageableDefault(size = 25) Pageable pageable, Model model) {
 
-        Page<User> userPage = userRepository.findAll(pageable);
+        String name = "";
+        if (userForm.getName() != null) {
+            name = userForm.getName();
+        }
+        String searchString = "%" + name + "%";
 
-        model.addAttribute("page", userPage);
-        model.addAttribute("users", userPage.getContent());
+        List<User> users = userRepository.findByNameLike(searchString, pageable);
+        Long userCount = userRepository.countByNameLike(searchString);
+
+        model.addAttribute("currentPage", pageable.getPageNumber());
+        model.addAttribute("maxPage", userCount / pageable.getPageSize());
+        model.addAttribute("users", users);
 
         return "users";
     }
-    
+
 }

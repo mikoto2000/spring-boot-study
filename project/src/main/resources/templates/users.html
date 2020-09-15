@@ -6,13 +6,23 @@
 </head>
 <body>
     <div>
-        <ul>
-            <li th:each="user : ${users}">[[${user.getName()}]]</li>
-        </ul>
-        <div>
-            <a th:if="${!page.first}" th:href="@{/users(page = ${page.number} - 1)}" >&lt;&lt;前</a>
-            [[${page.getNumber() + 1}]] / [[${page.getTotalPages()}]]
-            <a th:if="${!page.last}" th:href="@{/users(page = (${page.number} + 1))}" >次&gt;&gt;</a>
+        <div id="control">
+            <form th:action="@{/users}" th:object="${userForm}" >
+                <input type="text" th:field="*{name}">
+                <input type="submit">
+            </form>
+            <div>
+                <a th:if="${currentPage > 0}"       th:href="@{/users(page = (${currentPage} - 1), name = ${userForm.name})}" >&lt;&lt;前</a>
+                <span th:if="${currentPage == 0}" >&lt;&lt;前</span>
+                [[${currentPage + 1}]] / [[${maxPage + 1}]]
+                <a th:if="${currentPage < maxPage}" th:href="@{/users(page = (${currentPage} + 1), name = ${userForm.name})}" >次&gt;&gt;</a>
+                <span th:if="${currentPage == maxPage}" >次&gt;&gt;</span>
+            </div>
+        </div>
+        <div id="result">
+            <ul>
+                <li th:each="user : ${users}">[[${user.getName()}]]</li>
+            </ul>
         </div>
     </div>
 </body>
