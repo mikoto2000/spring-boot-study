@@ -36,6 +36,13 @@
     - [mysql - Docker Hub](https://hub.docker.com/_/mysql)
 
 
+## TODO
+
+- [ ] : 標準パッケージ構成に変更
+- [ ] : service クラスを作る
+- [ ] : 入力バリデーション
+
+
 ## 参考資料
 
 - [Spring Boot で Rest API 構築 その4 - MySQL への接続設定 - Qiita](https://qiita.com/sawa-@github/items/fa9f604c4005a86ab73f)
@@ -52,4 +59,9 @@
 - [PagingAndSortingRepository (Spring Data Core 2.3.3.RELEASE API)](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/PagingAndSortingRepository.html)
 - [Pageable (Spring Data Core 2.3.3.RELEASE API)](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/domain/Pageable.html)
 - [SpringBoot + Thymeleafでページングを実現する - Qiita](https://qiita.com/tanibuchi12/items/6c8fedbc19bdb277d6f2)
+- [Spring Boot JDBCテンプレートSQLログ](https://www.366service.com/jp/qa/df4e46fff30b608316ba75b98cd55213)
+- [Spring Bootのログ出力(How-toガイド) - Qiita](https://qiita.com/NagaokaKenichi/items/34356c72e8ac0279e1a0)
+- [Thymeleaf式メモ(Hishidama's Spring Boot Thymeleaf Expression Memo)](http://www.ne.jp/asahi/hishidama/home/tech/java/spring/boot/thymeleaf/expression.html)
+- [Spring Boot の標準パッケージ構成 - Spring Boot Reference Guide](https://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/#using-boot-using-the-default-package)
+
 
