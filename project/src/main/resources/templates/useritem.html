@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>User Item</title>
+</head>
+<body>
+    <div>
+        <div id="control">
+        <ul>
+            <li th:each="user : ${useritem}">[[${user.userName}]], [[${user.itemName}]], [[${user.count}]]</li>
+        </ul>
+    </div>
+</body>
+</html>

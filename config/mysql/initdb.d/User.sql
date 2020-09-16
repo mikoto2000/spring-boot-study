@@ -10,6 +10,48 @@ CREATE TABLE user
   name     VARCHAR(40)
 );
 
+
+DROP TABLE IF EXISTS item;
+
+CREATE TABLE item
+(
+  id              INT(10),
+  name        VARCHAR(40),
+  count           INT(10),
+  description VARCHAR(40)
+);
+
+INSERT INTO item (id, name, count, description) VALUES (1, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (1, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (1, "item3", 3, "description3");
+INSERT INTO item (id, name, count, description) VALUES (2, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (2, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (2, "item3", 3, "description3");
+INSERT INTO item (id, name, count, description) VALUES (3, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (3, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (3, "item3", 3, "description3");
+INSERT INTO item (id, name, count, description) VALUES (4, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (4, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (4, "item3", 3, "description3");
+INSERT INTO item (id, name, count, description) VALUES (5, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (5, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (5, "item3", 3, "description3");
+INSERT INTO item (id, name, count, description) VALUES (6, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (6, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (6, "item3", 3, "description3");
+INSERT INTO item (id, name, count, description) VALUES (7, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (7, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (7, "item3", 3, "description3");
+INSERT INTO item (id, name, count, description) VALUES (8, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (8, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (8, "item3", 3, "description3");
+INSERT INTO item (id, name, count, description) VALUES (9, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (9, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (9, "item3", 3, "description3");
+INSERT INTO item (id, name, count, description) VALUES (10, "item1", 1, "description1");
+INSERT INTO item (id, name, count, description) VALUES (10, "item2", 2, "description2");
+INSERT INTO item (id, name, count, description) VALUES (10, "item3", 3, "description3");
+
 INSERT INTO user (id, name) VALUES (1, "user1");
 INSERT INTO user (id, name) VALUES (2, "user2");
 INSERT INTO user (id, name) VALUES (3, "user3");
