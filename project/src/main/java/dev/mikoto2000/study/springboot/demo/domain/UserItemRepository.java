@@ -1,4 +1,4 @@
-package dev.mikoto2000.study.springboot.demo;
+package dev.mikoto2000.study.springboot.demo.domain;
 
 import java.util.List;
 

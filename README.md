@@ -62,6 +62,7 @@
 - [Spring Boot JDBCテンプレートSQLログ](https://www.366service.com/jp/qa/df4e46fff30b608316ba75b98cd55213)
 - [Spring Bootのログ出力(How-toガイド) - Qiita](https://qiita.com/NagaokaKenichi/items/34356c72e8ac0279e1a0)
 - [Thymeleaf式メモ(Hishidama's Spring Boot Thymeleaf Expression Memo)](http://www.ne.jp/asahi/hishidama/home/tech/java/spring/boot/thymeleaf/expression.html)
-- [Spring Boot の標準パッケージ構成 - Spring Boot Reference Guide](https://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/#using-boot-using-the-default-package)
-
+- [Spring Boot の標準パッケージ構成 - Spring Boot Reference Guide](https://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/#using-boot-locating-the-main-class)
+- [コントローラからサービスを呼び出す。MVC揃える - Qiita](https://qiita.com/yukihigasi/items/befb7425731bd29aeb7a)
+- [[Java][Spring Boot] @Transactionalでトランザクション処理してロールバックする。 | Developers.IO](https://dev.classmethod.jp/articles/java-spring-boot-transactional-rollback/)
 

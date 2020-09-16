@@ -1,4 +1,4 @@
-package dev.mikoto2000.study.springboot.demo;
+package dev.mikoto2000.study.springboot.demo.web;
 
 import java.util.List;
 
@@ -9,11 +9,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import dev.mikoto2000.study.springboot.demo.domain.User;
+import dev.mikoto2000.study.springboot.demo.service.UserService;
+import dev.mikoto2000.study.springboot.demo.web.form.UserForm;
+
 @Controller
 public class UserListController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping("/users")
     public String users(UserForm userForm, @PageableDefault(size = 25) Pageable pageable, Model model) {
@@ -24,8 +28,8 @@ public class UserListController {
         }
         String searchString = "%" + name + "%";
 
-        List<User> users = userRepository.findByNameLike(searchString, pageable);
-        Long userCount = userRepository.countByNameLike(searchString);
+        List<User> users = userService.findByNameLike(searchString, pageable);
+        Long userCount = userService.countByNameLike(searchString);
 
         model.addAttribute("currentPage", pageable.getPageNumber());
         model.addAttribute("maxPage", userCount / pageable.getPageSize());

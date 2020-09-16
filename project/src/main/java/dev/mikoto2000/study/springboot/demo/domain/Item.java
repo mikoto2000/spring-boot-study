@@ -1,18 +1,21 @@
-package dev.mikoto2000.study.springboot.demo;
+package dev.mikoto2000.study.springboot.demo.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 import org.springframework.data.annotation.Id;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @ToString
 @EqualsAndHashCode(of={"id"})
-public class User {
+public class Item {
     @Id
     private Long id;
     private String name;
+    private Long count;
+    private String description;
 }
+
