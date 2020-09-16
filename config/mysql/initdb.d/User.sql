@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS user;
 
 CREATE TABLE user
 (
-  id           INT(10),
+  id           INT(10) PRIMARY KEY AUTO_INCREMENT,
   name     VARCHAR(40)
 );
 

@@ -2,12 +2,12 @@ package dev.mikoto2000.study.springboot.demo;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.ToString;
 
 import org.springframework.data.annotation.Id;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @ToString
 @EqualsAndHashCode(of={"id"})
